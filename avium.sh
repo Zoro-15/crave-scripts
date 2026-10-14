@@ -39,7 +39,7 @@ sed -i 's/custom/lineage/g' device/motorola/cancunf/lineage_cancunf.mk
 cat << 'EOF' >> device/motorola/cancunf/lineage_cancunf.mk
 
 AVIUM_VERSION_APPEND_TIME_OF_DAY := false
-AVIUM_MAINTAINER := Ayu Kashyap
+AVIUM_MAINTAINER := Zoro-15
 AVIUM_SETTINGS_SOC_MODEL_NAME := Mediatek® Dimensity 7010
 AVIUM_SETTINGS_DEVICE_CODENAME := cancunf
 WITH_GMS := true

@@ -10,9 +10,10 @@ Welcome to the central repository for all custom ROM builds for the **Motorola C
 
 ## 📂 Available ROMs
 
-| ROM         | Android Version | Status    |
-|-------------|-----------------|-----------|
-| AviumUI     | Android 16 QPR2 | ✅ Stable |
+| ROM         | Android Version | Status    | Script |
+|-------------|-----------------|-----------|--------|
+| AviumUI     | Android 16 QPR2 | ✅ Stable | [avium.sh](./avium.sh) |
+| AxionOS     | Android 16 QPR2 (lineage-23.2) | ✅ Stable | [axion.sh](./axion.sh) |
 
 
 > 🔔 New ROMs will be added and maintained over time. Stay tuned!
@@ -20,12 +21,6 @@ Welcome to the central repository for all custom ROM builds for the **Motorola C
 ---
 
 ## 🛠 How to Build
-
-Each ROM has a dedicated guide in their respected readme.md. Follow the instructions relevant to the ROM you want to build:
-
-- [AviumUI Build Guide](./Avium.md)
-
-All required patches, overlays, and cherry-picks are mentioned in each guide.
 
 ### ☁️ Building with Crave Devspaces
 
@@ -36,14 +31,21 @@ All required patches, overlays, and cherry-picks are mentioned in each guide.
 
 2. **Clone the workspace in Devspace**:
    ```bash
-   crave clone create --projectID <PROJECT_ID> /crave-devspaces/avium_cancunf
-   cd /crave-devspaces/avium_cancunf
+   crave clone create --projectID <PROJECT_ID> /crave-devspaces/cancunf_build
+   cd /crave-devspaces/cancunf_build
    ```
 
 3. **Execute the automated build script**:
-   ```bash
-   crave run --no-patch -- "curl -sL https://raw.githubusercontent.com/Zoro-15/crave-scripts/main/avium.sh | bash"
-   ```
+
+   - **For AviumUI (Android 16 QPR2)**:
+     ```bash
+     crave run --no-patch -- "curl -sL https://raw.githubusercontent.com/Zoro-15/crave-scripts/main/avium.sh | bash"
+     ```
+
+   - **For AxionOS (Android 16 QPR2)**:
+     ```bash
+     crave run --no-patch -- "curl -sL https://raw.githubusercontent.com/Zoro-15/crave-scripts/main/axion.sh | bash"
+     ```
 
 4. **Pull the build output**:
    ```bash
@@ -52,7 +54,7 @@ All required patches, overlays, and cherry-picks are mentioned in each guide.
 
 5. **Clean up devspace when finished**:
    ```bash
-   crave clone destroy /crave-devspaces/avium_cancunf
+   crave clone destroy /crave-devspaces/cancunf_build
    ```
 
 
