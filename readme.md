@@ -42,7 +42,7 @@ All required patches, overlays, and cherry-picks are mentioned in each guide.
 
 3. **Execute the automated build script**:
    ```bash
-   crave run --no-patch -- "curl -sL https://raw.githubusercontent.com/<YOUR_GITHUB_USERNAME>/<YOUR_REPO>/<BRANCH>/avium.sh | bash"
+   crave run --no-patch -- "curl -sL https://raw.githubusercontent.com/Zoro-15/crave-scripts/main/avium.sh | bash"
    ```
 
 4. **Pull the build output**:
