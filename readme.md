@@ -25,6 +25,11 @@
      crave run --no-patch -- "curl -sL https://raw.githubusercontent.com/Zoro-15/crave-scripts/main/axion.sh | bash"
      ```
 
+   - **For CipherOS (Android 16 QPR2)**:
+     ```bash
+     crave run --no-patch -- "curl -sL https://raw.githubusercontent.com/Zoro-15/crave-scripts/main/cipher.sh | bash"
+     ```
+
 4. **Pull the build output**:
    ```bash
    crave pull out/target/product/cancunf/*.zip .
