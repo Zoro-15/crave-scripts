@@ -9,12 +9,6 @@ This guide will help you set up your environment and build **AviumUI** for the *
 ## 🔄 Setup Git Config
 
 
-```bash
-git config --global user.email "rajkavi4315@gmail.com"
-git config --global user.name "ZORO-15"
-```
-
----
 
 ## 📁 Step 1: Create Source Directory
 
