@@ -1,13 +1,17 @@
 #!/usr/bin/env bash
 set -e
 
+# --- Memory tuning for Soong (Go) ---
+export GOMEMLIMIT=10GiB
+export GOGC=40
+
 # Sync AviumUI
 rm -rf .repo/local_manifests
 repo init -u https://github.com/AviumUI/android_manifests -b avium-16.2 --git-lfs --depth 1
 if [ -f /opt/crave/resync.sh ]; then
     /opt/crave/resync.sh
 else
-    repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
+    repo sync -c -j8 --force-sync --no-clone-bundle --no-tags
 fi
 
 # Pull GMS & LFS
@@ -94,7 +98,7 @@ ccache -M 50G 2>/dev/null || true
 
 source build/envsetup.sh
 lunch lineage_cancunf-bp4a-user
-m bacon -j$(nproc --all)
+m bacon -j8
 
 ROM_ZIP=$(find out/target/product/cancunf -maxdepth 1 -name "*.zip" ! -name "*ota*" ! -name "*target_files*" 2>/dev/null | head -n 1)
 [ -z "$ROM_ZIP" ] && ROM_ZIP=$(ls out/target/product/cancunf/*.zip 2>/dev/null | head -n 1)
